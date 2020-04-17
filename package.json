@@ -1,0 +1,37 @@
+{
+  "name": "anespro",
+  "version": "1.0.0",
+  "description": "Platfom to link anesthesia professionals to share experiences about some scenarios",
+  "main": "index.js",
+  "scripts": {
+    "build": ".\\node_modules\\.bin\\babel src --out-dir dist",
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habinezajanvier/Anes_Pro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Habinezajanvier/Anes_Pro/issues"
+  },
+  "homepage": "https://github.com/Habinezajanvier/Anes_Pro#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/runtime": "^7.9.2",
+    "nodemon": "^2.0.3"
+  }
+}
