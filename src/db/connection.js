@@ -3,22 +3,23 @@ import config from '../../config/config';
 
 export default () => {
   const {
-    db: {username, password, host, port, name},
+    db: { username, password, host, port, name }
   } = config;
-  const url =
-    `mongodb://${username}:${password}@${host}:${port}/${name}?authSource=admin` ||
-    config.db.database_url;
 
-  mongoose.connect(
-    url,
-    {
-      useNewUrlParser: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-      useUnifiedTopology: true,
-    },
-    (err) => {
-      if (err) throw err;
-    }
-  );
+  const url =
+    config.db.database_url ||
+    `mongodb://${username}:${password}@${host}:${port}/${name}?authSource=admin`;
+
+  const options = {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+  };
+
+  mongoose.connect(url, options, (err) => {
+    if (err) throw err;
+    // eslint-disable-next-line no-console
+    console.log('Connected to MongoDB');
+  });
 };
