@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import config from '../../config/config';
 import Question from './question';
+import User from './user';
 
 const {
   db: {
@@ -25,4 +26,4 @@ mongoose.connect(url, options, (err) => {
   console.log('Connected to MongoDB');
 });
 
-export default { Question };
+export default { Question, User };
