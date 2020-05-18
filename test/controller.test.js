@@ -1,17 +1,19 @@
 import request from 'supertest';
 import mongoose from 'mongoose';
-import server from '../src/index';
+import server from '../src/app';
 import { url } from '../src/models';
 
 describe('/anesPro', () => {
   beforeAll((done) => {
-    mongoose.connect(url,
+    mongoose.connect(
+      url,
       { useNewUrlParser: true, useUnifiedTopology: true },
       () => {
         mongoose.connection.db.dropDatabase(() => {
           done();
         });
-      });
+      }
+    );
   });
 
   describe('GET', () => {

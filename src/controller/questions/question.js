@@ -1,4 +1,4 @@
-import model from '../models';
+import model from '../../models';
 
 const { Question } = model;
 
